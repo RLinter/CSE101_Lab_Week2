@@ -5,12 +5,29 @@
         <title>Ruichen Li's GitHub User Page</title>
     </head>
     <body>
-        <header><h1>Welcome to <em>Ruichen Li's</em> Github User Page</h1></header>
+        <header><h1><b>Welcome to <em>Ruichen Li's</em> Github User Page</b></h1></header>
         <details>
             <summary>Summary of this page</summary>
             <p>A summary of my edcutation, expertise, skills, and personal insights</p>
           </details>
         <section>
+        
+        <canvas id="Canvas" width="500" height="100" style="border:2px solid #d3d3d3;"></canvas>
+             
+            <script>
+            var c = document.getElementById("Canvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "30px Verdana";
+
+            var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+            gradient.addColorStop("0"," green");
+            gradient.addColorStop("0.5", "red");
+            gradient.addColorStop("1.0", "blue");
+
+            ctx.fillStyle = gradient;
+            ctx.fillText("Check out my page!",100,50);
+            </script>
+
         <div class="education">
             <h2>Education</h2>
             <ul>
@@ -22,7 +39,7 @@
                 </li>
 
                 <li>
-                    <a href="https://ucsd.edu/">Uinversity of California San Diego</a>
+                    <nav><a href="https://ucsd.edu/">Uinversity of California San Diego</a></nav>
                     <br>
                     <strong><i>UCSD</i></strong>
                     <p>I am in Revelle College. The expected graduate time is <b>winter 2023</b></p>
@@ -95,24 +112,43 @@
                 <li>
                     Favorite soccer club: Inter Milan
                     <br>
-                    <embed type="image/jpg" src="inter.png">
+
+                    <picture>
+                        <img src="inter.png" alt="Inter Milan" style="width:auto;">
+                    </picture>
+                    
                 </li>
                 <li>
                     A few pictures of my dogs.
                     RIP to Juli who just passed away.
                     <br>
-                    <img src="Juli1.jpg" alt="RIP Juli" width="350" height="600">
+                    <figure>
+                        <img src="Juli1.jpg" alt="RIP Juli" width="350" height="600">
+                        <figcaption><b>RIP</b> Juli.</figcaption>
+                      </figure>
                     <object data="Laifu.jpg" type="image/jpg" width="500" height="400">
                     </object>
                 </li>
             </ul>
         </div>
 
+        <template>
+            <h3>This is hidden from the viewers</h3>
+            <p>
+                I spent a lot of time learning and building this page. Hope you liked it.
+            </p>
+        </template>
+
+        <hr>
 
         <h3>Comment</h3>
+        <fieldset> 
+        <legend> Comment section </legend>
         <form action="#">
             <label for="comment">Please submit any comment you have</label>
-            <input type="text" id="comment" name="comment">
+            <textarea type="text" id="comment" name="comment" rows="2" cols="40">
+                Feel free to type any comments or suggestions to my page.
+            </textarea>
             <button type="submit" value="Submit">Submit</button>
 
             <p>Feel free to fill in more informtion about you</p>
@@ -141,6 +177,7 @@
             <label for="appt">Your local time:</label>
             <input type="time" id="appt" name="appt">
             <input type="submit">
+        
         </form>
         <label>Choose the type of comment you entered:</label>
             <select  name="comment2" id="comment2">
@@ -155,6 +192,20 @@
                 <option value="others">Others</option>
             </optgroup>
             </select>
+            
+            <form action="#">
+                <label for="browser">Choose your browser you used to view the page from the list:</label>
+                <input list="browsers" name="browser" id="browser">
+                <datalist id="browsers">
+                  <option value="Chrome">
+                  <option value="Edge">
+                  <option value="Safari">
+                  <option value="Firefox">
+                  <option value="Others">
+                </datalist>
+                <input type="submit">
+              </form>
+        </fieldset>
         <br>
         <p>The <code>submit</code> button is not ready for sending the received data to server yet.</p>
         </section>
@@ -167,6 +218,9 @@
     <footer>
         <p>Author: Ruichen Li<br>
         Date: 1/13/2021</p>
+        <pre>Main sources: mainly w3schools
+            and stackoverflow
+        </pre>
     </footer>
 
     </body>
